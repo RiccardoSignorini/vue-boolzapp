@@ -1,0 +1,22 @@
+#background{
+    background: rgb(49,212,140);
+    background: linear-gradient(rgba(7,150,137,1) 0%, rgba(7,150,137,1) 25%, rgba(217,219,213,1) 25%, rgba(217,219,213,1) 100%);   
+}
+
+#window{
+    height: 90%;
+    width: 75%;
+
+}
+
+#chat-list{
+    width: 25%;
+    height: 100%;
+    border: 1px solid red;
+}
+
+#chat{
+    width: 75%;
+    height: 100%;
+    border: 1px solid red;
+}
