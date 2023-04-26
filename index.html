@@ -18,11 +18,52 @@
     <div id="app">
         <div id="background" class="vh-100 d-flex align-items-center justify-content-center">
             <div id="window" class="d-flex bg-light">
-                <div id="chat-list">
+                <!-- PARTE A SINISTRA DELLA LISTA -->
+                <div id="parte-sinistra">
+                    <div id="zona-alta">
+                        <!-- PARTE ALTA -->
+                        <div>
 
+                        </div>
+                        <!-- PARTE SEGNALETICA -->
+                        <div>
+
+                        </div>
+                        <!-- RICERCA -->
+                        <div>
+
+                        </div> 
+                    </div>
+                    <!-- LISTA CHAT -->
+                    <div id="chat-list">
+                        <div id="single-chat" class="d-flex p-3">
+                            <div>
+                                <img src="" alt="">
+                            </div>
+                            <div>
+                                <h6>{{contacts[0].name}}</h6>
+                                <p>The last message was {{contacts[0].messages[2].status}}</p>
+                            </div>
+                            <div>
+                                
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div id="chat">
+                <!-- PARTE A DESTRA DELLA CHAT -->
+                <div id="parte-destra">
+                    <!-- PARTE UTENTE CHAT -->
+                    <div>
 
+                    </div>
+                    <!-- CHAT -->
+                    <div>
+
+                    </div>
+                    <!-- INPUT MESSAGGIO -->
+                    <div>
+
+                    </div>
                 </div>
             </div>
         </div>

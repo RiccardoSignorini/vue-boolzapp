@@ -9,14 +9,41 @@
 
 }
 
-#chat-list{
-    width: 25%;
+#parte-sinistra{
+    width: 30%;
     height: 100%;
     border: 1px solid red;
 }
 
-#chat{
-    width: 75%;
+#parte-destra{
+    width: 70%;
     height: 100%;
     border: 1px solid red;
+}
+
+#parte-sinistra>div, #parte-destra div{
+    border: 1px solid blue;
+}
+
+#zona-alta{
+    height: 30%;
+}
+
+#zona-alta div{
+    height: calc(100%/3);
+    border: 1px solid black;
+}
+
+#chat-list{
+    height: 70%;
+}
+
+#chat-list p{
+    font-size: 0.7rem;
+    opacity: 0.6;
+}
+
+img{
+    width: 3rem;
+    border-radius: 100%;
 }
