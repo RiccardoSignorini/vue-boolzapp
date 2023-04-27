@@ -76,9 +76,30 @@ img{
 #chat{
     height: 86%;
     background-image: url('../img/mine.jpg');
+    padding: 1rem;
 }
 
 #input-mex{
     background-color: rgb(234, 234, 234);
     height: 7%;
+}
+
+.sent{
+    background-color: rgb(215, 248, 189);
+    align-self: flex-end;
+}
+
+.received{
+    background-color: white;
+    align-self: flex-start;
+}
+
+.sent, .received{
+    padding: 8px;
+    border-radius: 15px;
+    margin-bottom: 0.7rem;
+}
+
+.sent p, .received p{
+    margin: 0;
 }
