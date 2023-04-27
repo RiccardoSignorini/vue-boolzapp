@@ -18,31 +18,47 @@
     <div id="app">
         <div id="background" class="vh-100 d-flex align-items-center justify-content-center">
             <div id="window" class="d-flex bg-light">
+
                 <!-- PARTE A SINISTRA DELLA LISTA -->
                 <div id="parte-sinistra">
                     <div id="zona-alta">
                         <!-- PARTE ALTA -->
-                        <div>
-
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <img src="./assets/img/avatar_io.jpg" alt="">
+                                <span>Sofia</span>
+                            </div>
+                            <div>
+                                <i class="fa-solid fa-circle-notch" style="color: #c0c0c0;"></i>
+                                <i class="fa-solid fa-message" style="color: #c0c0c0;"></i>
+                                <i class="fa-solid fa-ellipsis-vertical" style="color: #c0c0c0;"></i>
+                            </div>
                         </div>
                         <!-- PARTE SEGNALETICA -->
-                        <div>
-
+                        <div id="signal" class="d-flex align-items-center">
+                            <i class="fa-solid fa-bell-slash p-2 bg-light rounded-circle" style="color: #00c7fc;"></i>
+                            <div>
+                                <p>Gestisci notifiche di nuovi messaggi</p>
+                                <p>Attiva notifiche desktop</p>
+                            </div>
                         </div>
                         <!-- RICERCA -->
                         <div>
-
+                            
                         </div> 
                     </div>
                     <!-- LISTA CHAT -->
                     <div id="chat-list">
-                        <div id="single-chat" class="d-flex p-3">
+                        <div 
+                            id="single-chat" class="d-flex"
+                            v-for="(element,index) in contacts"
+                            :key="index">
                             <div>
-                                <img src="" alt="">
+                                <img v-bind:src="element.avatar" alt="">
                             </div>
                             <div>
-                                <h6>{{contacts[0].name}}</h6>
-                                <p>The last message was {{contacts[0].messages[2].status}}</p>
+                                <h6>{{element.name}}</h6>
+                                <p>The last message was </p>
                             </div>
                             <div>
                                 
@@ -50,6 +66,7 @@
                         </div>
                     </div>
                 </div>
+
                 <!-- PARTE A DESTRA DELLA CHAT -->
                 <div id="parte-destra">
                     <!-- PARTE UTENTE CHAT -->
@@ -57,7 +74,7 @@
 
                     </div>
                     <!-- CHAT -->
-                    <div>
+                    <div id="chat">
 
                     </div>
                     <!-- INPUT MESSAGGIO -->

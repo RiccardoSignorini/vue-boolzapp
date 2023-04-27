@@ -12,7 +12,6 @@
 #parte-sinistra{
     width: 30%;
     height: 100%;
-    border: 1px solid red;
 }
 
 #parte-destra{
@@ -21,21 +20,33 @@
     border: 1px solid red;
 }
 
-#parte-sinistra>div, #parte-destra div{
+#parte-destra div{
     border: 1px solid blue;
 }
 
 #zona-alta{
-    height: 30%;
+    height: 20%;
 }
 
 #zona-alta div{
-    height: calc(100%/3);
-    border: 1px solid black;
+    margin-bottom: 0.4rem;
+}
+
+i{
+    margin-right: 0.7rem;
+}
+
+#signal{
+    background-color: #00c7fc;
+}
+
+#signal p{
+    font-size: 0.7rem;
+    margin: 0 auto;
 }
 
 #chat-list{
-    height: 70%;
+    height: 80%;
 }
 
 #chat-list p{
@@ -44,6 +55,11 @@
 }
 
 img{
-    width: 3rem;
+    width: 2.5rem;
     border-radius: 100%;
+    margin-right: 0.7rem;
+}
+
+#chat{
+    height: 80%;
 }
