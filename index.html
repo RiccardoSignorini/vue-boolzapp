@@ -23,7 +23,7 @@
                 <div id="parte-sinistra">
                     <div id="zona-alta">
                         <!-- PARTE ALTA -->
-                        <div class="d-flex justify-content-between align-items-center">
+                        <div id="user" class="d-flex justify-content-between align-items-center">
                             <div>
                                 <img src="./assets/img/avatar_io.jpg" alt="">
                                 <span>Sofia</span>
@@ -43,8 +43,8 @@
                             </div>
                         </div>
                         <!-- RICERCA -->
-                        <div>
-                            
+                        <div class="text-center">
+                            <input type="text" placeholder="Cerca o inizia una nuova chat">
                         </div> 
                     </div>
                     <!-- LISTA CHAT -->
@@ -54,14 +54,14 @@
                             v-for="(element,index) in contacts"
                             :key="index">
                             <div>
-                                <img v-bind:src="element.avatar" alt="">
+                                <img :src="element.avatar" alt="">
                             </div>
                             <div>
                                 <h6>{{element.name}}</h6>
                                 <p>The last message was </p>
                             </div>
                             <div>
-                                
+                                <!-- ORARIO -->
                             </div>
                         </div>
                     </div>
@@ -70,16 +70,26 @@
                 <!-- PARTE A DESTRA DELLA CHAT -->
                 <div id="parte-destra">
                     <!-- PARTE UTENTE CHAT -->
-                    <div>
-
+                    <div id="user-chat" class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <img :src="contacts[0].avatar" alt="">
+                            <span>{{contacts[0].name}}</span>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-magnifying-glass" style="color: #c0c0c0;"></i>
+                            <i class="fa-solid fa-paperclip" style="color: #c0c0c0;"></i>
+                            <i class="fa-solid fa-ellipsis-vertical" style="color: #c0c0c0;"></i>
+                        </div>
                     </div>
                     <!-- CHAT -->
                     <div id="chat">
 
                     </div>
                     <!-- INPUT MESSAGGIO -->
-                    <div>
-
+                    <div id="input-mex" class="d-flex justify-content-between align-items-center px-3">
+                        <i class="fa-regular fa-face-smile" style="color: #606060;"></i>
+                        <input type="text" placeholder="Scrivi un messaggio">
+                        <i class="fa-solid fa-microphone" style="color: #606060;"></i>
                     </div>
                 </div>
             </div>
