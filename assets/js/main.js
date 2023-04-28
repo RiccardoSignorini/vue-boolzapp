@@ -194,11 +194,12 @@ createApp({
         },
 
         newMessage(){
-            this.contacts[indexActive].messages.push({
+            this.contacts[this.indexActive].messages.push({
                 date: '10/01/2020 15:30:55',
                 message: `${this.inputMessage}`,
                 status: 'sent'
             })
+            this.inputMessage = ''
         }
 
     }
