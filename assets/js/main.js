@@ -182,7 +182,7 @@ createApp({
     },
 
     created(){
-
+        console.log()
     },	
     // FUNZIONI
     methods: {
@@ -218,10 +218,16 @@ createApp({
         },
 
         // RICERCA DELLA CHAT
-        oggettiFiltrati(){
-            this.contacts[this.indexActive].name.filter(()=>{
-                return this.contacts[this.indexActive].name.includes(search);
-            });
-        } 
+        // oggettiFiltrati(){
+        //     this.contacts[this.indexActive].name.filter(()=>{
+        //         return this.contacts[this.indexActive].name.includes(search);
+        //     });
+        // } 
+
+        // DIVISIONE DATA E ORA
+        // divisionDate(i){
+        //     const arrayData = this.contacts[this.indexActive].messages[i].date.split(' ')
+        //     return arrayData[i]
+        // }
     }
 }).mount('#app')
