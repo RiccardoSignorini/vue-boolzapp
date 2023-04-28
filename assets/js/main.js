@@ -212,8 +212,16 @@ createApp({
 
         },
 
-        lastMessage() {
+        // ULTIMO MESSAGGIO INVIATO
+        lastMessage(){
             return this.contacts[this.indexActive].messages[this.contacts[this.indexActive].messages.length - 1];
-          }
+        },
+
+        // RICERCA DELLA CHAT
+        oggettiFiltrati(){
+            this.contacts[this.indexActive].name.filter(()=>{
+                return this.contacts[this.indexActive].name.includes(search);
+            });
+        } 
     }
 }).mount('#app')
