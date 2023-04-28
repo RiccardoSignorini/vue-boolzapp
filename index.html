@@ -49,7 +49,7 @@
                     </div>
                     <!-- LISTA CHAT -->
                     <div id="chat-list">
-                        <div id="person" class="d-flex justify-content-between" v-for="(element,index) in contacts" :key="index" @click="chatSelection(index)" :class="element.visible==false ? 'd-none':''">
+                        <div id="person" class="d-flex justify-content-between p-1" v-for="(element,index) in contacts" :key="index" @click="chatSelection(index)" :class="element.visible==false ? 'd-none':''">
                             <div class="d-flex">
                                 <div>
                                     <img :src="element.avatar" alt="">
@@ -86,7 +86,7 @@
                     <div id="chat" class="d-flex flex-column">
                         <div :class="element.status=='sent' ? 'sent':'received'" v-for="(element,index) in contacts[indexActive].messages" :key="index">
                             <span>{{element.message}}</span>
-                            <!-- <span>{{element.date}}</span> -->
+                            <span id="orario-mex">{{hours(index)}}</span>
                         </div>
                     </div>
                     <!-- INPUT MESSAGGIO -->

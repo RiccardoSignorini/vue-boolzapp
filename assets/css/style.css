@@ -114,3 +114,9 @@ img{
 .sent p, .received p{
     margin: 0;
 }
+
+#orario-mex{
+    opacity: 0.6;
+    font-size: 0.7rem;
+    margin-left: 0.7rem;
+}
