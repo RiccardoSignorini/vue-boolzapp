@@ -178,21 +178,21 @@ createApp({
             indexActive: 0,
             search: '',
             inputMessage: '',
-            currentDate: '',
-            currentTime: '',
         }
     },
 
     created(){
 
     },	
-
+    // FUNZIONI
     methods: {
-        // FUNZIONI
+        
+        // CAMBIAMENTO CHAT ATTIVO
         chatSelection(i){
             this.indexActive = i
         },
 
+        // SCRITTURA NUOVO MESSAGGIO
         newMessage(){
             this.contacts[this.indexActive].messages.push({
                 date: '10/01/2020 15:30:55',
@@ -200,7 +200,20 @@ createApp({
                 status: 'sent'
             })
             this.inputMessage = ''
-        }
 
+            // RISPOSTA AUTOMATICA
+            setTimeout(()=>{
+                this.contacts[this.indexActive].messages.push({
+                    date: '10/01/2020 15:30:55',
+                    message: `Ciao!`,
+                    status: 'received'
+                })
+            },1000)
+
+        },
+
+        lastMessage() {
+            return this.contacts[this.indexActive].messages[this.contacts[this.indexActive].messages.length - 1];
+          }
     }
 }).mount('#app')

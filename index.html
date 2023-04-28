@@ -49,17 +49,13 @@
                     </div>
                     <!-- LISTA CHAT -->
                     <div id="chat-list">
-                        <div 
-                            id="person" class="d-flex"
-                            v-for="(element,index) in contacts"
-                            :key="index"
-                            @click="chatSelection(index)">
+                        <div id="person" class="d-flex" v-for="(element,index) in contacts" :key="index" @click="chatSelection(index)">
                             <div>
                                 <img :src="element.avatar" alt="">
                             </div>
                             <div>
                                 <h6>{{element.name}}</h6>
-                                <p>The last message was </p>
+                                <p>Ciao: {{lastMessage.message}}</p>
                             </div>
                             <div>
                                 <!-- ORARIO -->
@@ -84,10 +80,9 @@
                     </div>
                     <!-- CHAT -->
                     <div id="chat" class="d-flex flex-column">
-                        <div :class="element.status=='sent' ? 'sent':'received'"
-                                v-for="(element,index) in contacts[indexActive].messages"
-                                :key="index">
+                        <div :class="element.status=='sent' ? 'sent':'received'" v-for="(element,index) in contacts[indexActive].messages" :key="index">
                             <p>{{element.message}}</p>
+                            <!-- <span>{{element.date}}</span> -->
                         </div>
                     </div>
                     <!-- INPUT MESSAGGIO -->
