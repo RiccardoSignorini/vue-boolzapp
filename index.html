@@ -44,15 +44,16 @@
                         </div>
                         <!-- RICERCA -->
                         <div class="text-center">
-                            <input type="text" placeholder="Cerca o inizia una nuova chat">
+                            <input v-model="search" type="text" placeholder="Cerca o inizia una nuova chat">
                         </div> 
                     </div>
                     <!-- LISTA CHAT -->
                     <div id="chat-list">
                         <div 
-                            id="single-chat" class="d-flex"
+                            id="person" class="d-flex"
                             v-for="(element,index) in contacts"
-                            :key="index">
+                            :key="index"
+                            @click="chatSelection(index)">
                             <div>
                                 <img :src="element.avatar" alt="">
                             </div>
@@ -72,8 +73,8 @@
                     <!-- PARTE UTENTE CHAT -->
                     <div id="user-chat" class="d-flex justify-content-between align-items-center">
                         <div>
-                            <img :src="contacts[0].avatar" alt="">
-                            <span>{{contacts[0].name}}</span>
+                            <img :src="contacts[indexActive].avatar" :alt="contacts[indexActive].name">
+                            <span>{{contacts[indexActive].name}}</span>
                         </div>
                         <div>
                             <i class="fa-solid fa-magnifying-glass" style="color: #c0c0c0;"></i>
@@ -83,14 +84,10 @@
                     </div>
                     <!-- CHAT -->
                     <div id="chat" class="d-flex flex-column">
-                        <div class="sent">
-                            <p>Hai portato a spasso il cane?</p>
-                        </div>
-                        <div class="sent">
-                            <p>Ricordati di stendere i panni</p>
-                        </div>
-                        <div class="received">
-                            <p>Tutto fatto!</p>
+                        <div :class="element.status=='sent' ? 'sent':'received'"
+                                v-for="(element,index) in contacts[indexActive].messages"
+                                :key="index">
+                            <p>{{element.message}}</p>
                         </div>
                     </div>
                     <!-- INPUT MESSAGGIO -->

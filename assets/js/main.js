@@ -174,7 +174,9 @@ createApp({
                         }
                     ],
                 }
-            ]
+            ],
+            indexActive: 0,
+            search: ''
         }
     },
 
@@ -184,5 +186,9 @@ createApp({
 
     methods: {
         // FUNZIONI
+        chatSelection(i){
+            this.indexActive = i
+        }
+
     }
 }).mount('#app')
