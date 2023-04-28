@@ -37,29 +37,29 @@
                         <!-- PARTE SEGNALETICA -->
                         <div id="signal" class="d-flex align-items-center">
                             <i class="fa-solid fa-bell-slash p-2 bg-light rounded-circle" style="color: #00c7fc;"></i>
-                            <div>
+                            <div class="mx-3">
                                 <p>Gestisci notifiche di nuovi messaggi</p>
-                                <p>Attiva notifiche desktop</p>
+                                <p class="text-decoration-underline">Attiva notifiche desktop</p>
                             </div>
                         </div>
                         <!-- RICERCA -->
                         <div class="text-center">
-                            <input v-model="search" type="text" placeholder="Cerca o inizia una nuova chat">
+                            <input v-model="search" type="text" placeholder="Cerca o inizia una nuova chat" @keyup="oggettiFiltrati()">
                         </div> 
                     </div>
                     <!-- LISTA CHAT -->
                     <div id="chat-list">
-                        <div id="person" class="d-flex" v-for="(element,index) in contacts" :key="index" @click="chatSelection(index)">
+                        <div id="person" class="d-flex" v-for="(element,index) in contacts" :key="index" @click="chatSelection(index)" :class="element.visible==false ? 'd-none':''">
                             <div>
                                 <img :src="element.avatar" alt="">
                             </div>
                             <div>
-                                <h6>{{element.name}}</h6>
-                                <p>{{lastMessage().message}}</p>
+                                <p>{{element.name}}</p>
+                                <p>{{lastMessage(index)}}</p>
                             </div>
                             <div>
                                 <!-- ORARIO -->
-                                <!-- <p>{{divisionDate(index)}}</p> -->
+                                <p>{{divisionDate(index)}}</p>
                             </div>
                         </div>
                     </div>

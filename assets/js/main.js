@@ -178,6 +178,7 @@ createApp({
             indexActive: 0,
             search: '',
             inputMessage: '',
+            
         }
     },
 
@@ -213,21 +214,24 @@ createApp({
         },
 
         // ULTIMO MESSAGGIO INVIATO
-        lastMessage(){
-            return this.contacts[this.indexActive].messages[this.contacts[this.indexActive].messages.length - 1];
+        lastMessage(i){
+            return this.contacts[i].messages[this.contacts[i].messages.length - 1].message;
         },
 
         // RICERCA DELLA CHAT
-        // oggettiFiltrati(){
-        //     this.contacts[this.indexActive].name.filter(()=>{
-        //         return this.contacts[this.indexActive].name.includes(search);
-        //     });
-        // } 
+        oggettiFiltrati(){
+            this.contacts.forEach((element)=>{
+                if (element.name.toLowerCase().includes(this.search.toLowerCase())) {
+                    element.visible = true;
+                } else {
+                    element.visible = false;
+                }
+            });
+        },
 
         // DIVISIONE DATA E ORA
-        // divisionDate(i){
-        //     const arrayData = this.contacts[this.indexActive].messages[i].date.split(' ')
-        //     return arrayData[i]
-        // }
+        divisionDate(i){
+            return this.contacts[i].messages[this.contacts[i].messages.length-1].date.split(' ')[1].split(':',2).join(':')
+        }
     }
 }).mount('#app')
