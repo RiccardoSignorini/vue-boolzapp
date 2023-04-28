@@ -176,7 +176,10 @@ createApp({
                 }
             ],
             indexActive: 0,
-            search: ''
+            search: '',
+            inputMessage: '',
+            currentDate: '',
+            currentTime: '',
         }
     },
 
@@ -188,6 +191,14 @@ createApp({
         // FUNZIONI
         chatSelection(i){
             this.indexActive = i
+        },
+
+        newMessage(){
+            this.contacts[indexActive].messages.push({
+                date: '10/01/2020 15:30:55',
+                message: `${this.inputMessage}`,
+                status: 'sent'
+            })
         }
 
     }
