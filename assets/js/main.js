@@ -229,9 +229,14 @@ createApp({
             });
         },
 
-        // DIVISIONE DATA E ORA
-        divisionDate(i){
+        // DIVISIONE DATA E ORA (ora)
+        hours(i){
             return this.contacts[i].messages[this.contacts[i].messages.length-1].date.split(' ')[1].split(':',2).join(':')
+        },
+
+        // DIVISIONE DATA E ORA (data)
+        date(i){
+            return this.contacts[i].messages[this.contacts[i].messages.length-1].date.split(' ')[0]
         }
     }
 }).mount('#app')

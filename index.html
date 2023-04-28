@@ -49,17 +49,20 @@
                     </div>
                     <!-- LISTA CHAT -->
                     <div id="chat-list">
-                        <div id="person" class="d-flex" v-for="(element,index) in contacts" :key="index" @click="chatSelection(index)" :class="element.visible==false ? 'd-none':''">
-                            <div>
-                                <img :src="element.avatar" alt="">
+                        <div id="person" class="d-flex justify-content-between" v-for="(element,index) in contacts" :key="index" @click="chatSelection(index)" :class="element.visible==false ? 'd-none':''">
+                            <div class="d-flex">
+                                <div>
+                                    <img :src="element.avatar" alt="">
+                                </div>
+                                <div>
+                                    <h6>{{element.name}}</h6>
+                                    <p>{{lastMessage(index)}}</p>
+                                </div>
                             </div>
-                            <div>
-                                <p>{{element.name}}</p>
-                                <p>{{lastMessage(index)}}</p>
-                            </div>
-                            <div>
+                            <div class="text-end">
                                 <!-- ORARIO -->
-                                <p>{{divisionDate(index)}}</p>
+                                <p>{{date(index)}}</p>
+                                <p>{{hours(index)}}</p>
                             </div>
                         </div>
                     </div>
@@ -82,7 +85,7 @@
                     <!-- CHAT -->
                     <div id="chat" class="d-flex flex-column">
                         <div :class="element.status=='sent' ? 'sent':'received'" v-for="(element,index) in contacts[indexActive].messages" :key="index">
-                            <p>{{element.message}}</p>
+                            <span>{{element.message}}</span>
                             <!-- <span>{{element.date}}</span> -->
                         </div>
                     </div>
